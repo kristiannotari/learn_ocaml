@@ -1,0 +1,7 @@
+home
+house
+car
+bubble
+water
+ground
+ocaml
