@@ -25,8 +25,10 @@ let print_words words =
   in _aux 0 words
 
 let process_char = function
-  | (('A' .. 'Z') as c) | (('a' .. 'z') as c) -> (true, String.make 1 c)
-  | c -> (false, "\\" ^ (string_of_int (Char.code c)))
+  | (('A' .. 'Z') as c) | (('a' .. 'z') as c) -> 
+    (true, String.make 1 (Char.lowercase_ascii c))
+  | c -> 
+    (false, "\\" ^ (string_of_int (Char.code c)))
 
 let is_in l word =
   let rec _aux pos = function
